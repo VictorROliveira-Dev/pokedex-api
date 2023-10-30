@@ -72,8 +72,6 @@ closeModal.onclick = function () {
 }
 
 const createModalPokemon = (poke) => {
-    const createModal = document.createElement("dialog");
-
     const pokeName = poke.name[0].toUpperCase() + poke.name.slice(1);
     const pokeAltura = poke.height.toString();
     const pokePeso = poke.weight.toString();
@@ -89,6 +87,5 @@ const createModalPokemon = (poke) => {
 
     <button>Close</button>
     `
-    modal.innerHTML = modalInnerHTML;
-    createModal.appendChild(modal);
+    modal.appendChild(modalInnerHTML);
 }
