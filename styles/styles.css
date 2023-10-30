@@ -19,6 +19,11 @@ h1 {
     letter-spacing: 2px;
     color: #eee;
     font-weight: 300;
+    font-size: 4rem;
+}
+
+strong {
+    color: red;
 }
 
 .pokeContainer {
@@ -31,12 +36,21 @@ h1 {
 }
 
 .pokemon {
-    background-color: #5C5470;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
     margin: 10px;
     padding: 20px;
     text-align: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.pokemon:hover {
+    transform: scale(1.1);
+}
+
+.pokemon:not(:hover){
+    opacity: 0.7;
 }
 
 .imgContainer {
@@ -76,4 +90,46 @@ h1 {
 .type {
     font-size: 1.2rem;
     font-weight: 400;
+}
+
+dialog::backdrop {
+    background-color: rgba(142, 136, 136, 0.441);
+}
+
+dialog {
+    border: none;
+    border-radius: 5px;
+    margin: 200px 650px 200px 650px;
+    width: 22%;
+    padding: 25px;
+}
+
+#pokename {
+    font-size: 2.4rem;
+    color: #232D3F;
+    font-weight: 800;
+    border-bottom: 2px solid #232D3F;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.pokeatributos {
+    font-size: 1.6rem;
+}
+
+dialog button {
+    margin-top: 15px;
+    border: none;
+    padding: 8px;
+    font-weight: 800;
+    background-color: red;
+    color: #eee;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+dialog button:hover{
+    opacity: 0.7;
 }

@@ -30,6 +30,8 @@ const getPokemonsAPI = async (id) => {
     const resp = await fetch(url);
     const data = await resp.json();
     createPokemonCard(data);
+    //createModalPokemon(data);
+    //console.log(data);
 }
 
 const createPokemonCard = (poke) => {
@@ -60,3 +62,33 @@ const createPokemonCard = (poke) => {
 }
 
 fetchPokemons();
+
+//Modal:
+const modal = document.querySelector("dialog");
+const closeModal = document.querySelector("dialog button");
+
+closeModal.onclick = function () {
+    modal.close();
+}
+
+const createModalPokemon = (poke) => {
+    const createModal = document.createElement("dialog");
+
+    const pokeName = poke.name[0].toUpperCase() + poke.name.slice(1);
+    const pokeAltura = poke.height.toString();
+    const pokePeso = poke.weight.toString();
+    const pokeXP = poke.base_experience.toString();
+    pokeXP == null ? '0' : poke.base_experience.toString();
+    
+    const modalInnerHTML = `
+    <h1 id="pokename">${pokeName}</h1>
+    <p class="pokeatributos">Altura: ${pokeAltura}</p>
+    <p class="pokeatributos">Peso: ${pokePeso}</p>
+    <p class="pokeatributos">Habilidades:</p>
+    <p class="pokeatributos">Experiência de base: ${pokeXP}</p>
+
+    <button>Close</button>
+    `
+    modal.innerHTML = modalInnerHTML;
+    createModal.appendChild(modal);
+}
